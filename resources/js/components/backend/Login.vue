@@ -5,6 +5,10 @@
                 <div class="panel-heading">Log in</div>
                 <div class="panel-body">
                     <form role="form" method="POST" action="">
+                        <!-- <input type="hidden" name="_token" v-bind:value="csrf"> -->
+                        <slot>
+         <!-- CSRF gets injected into this slot -->
+       </slot> 
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="email" type="email" value="" autofocus="">
@@ -29,6 +33,15 @@
 </template>
 <script>
 export default {
-    name: 'Login'
+    name: 'Login',
+   data() {
+    return {
+      email: null,
+      password: null,
+      //csrf token
+            //  csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+    }
+   },
+   
 }
 </script>

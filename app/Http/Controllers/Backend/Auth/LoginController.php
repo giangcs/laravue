@@ -15,7 +15,8 @@ class LoginController extends Controller
     }
     public function postLogin(Request $request){
         // return redirect()->route('admin.index');
-        return view('backend.index');
+        $data['a']= '123323';
+        return view('backend.index' ,$data);
         
     }
 }
