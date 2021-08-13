@@ -20,6 +20,6 @@ Route::get('/', function () {
 // BackEnd
 Route::get('/login', 'Backend\Auth\LoginController@login')->name('login');
 Route::post('/login', 'Backend\Auth\LoginController@postLogin');
-// Route::group(['prefix' => 'admin', 'namespace' => 'Backend', 'middleware'=>'CheckLogin'], function () {
-//     Route::get('/', 'AdminController@index')->name('admin.index');
-// });
+Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
+        Route::get('/', 'AdminController@index')->name('admin.index');
+    });
