@@ -10,13 +10,13 @@
 	<link href="{{ asset('backend/css/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-	<div id="app">
-    <the-header></the-header>
-    <the-sidebar></the-sidebar> 
+	
+    <div id="app">
 		<!--/. content-->
         @yield('content')
         <!--/. content-->
 	</div>
+	
 	<script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 

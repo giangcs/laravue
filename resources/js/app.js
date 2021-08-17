@@ -1,29 +1,23 @@
 /**
  * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * includes Vue and other libraries. 
  */
-
 require('./bootstrap');
-
 window.Vue = require('vue');
+import router from './router'
 
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
+ * Vue components.
  */
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('v-login', require('./components/backend/Login.vue').default);
-Vue.component('v-home', require('./components/backend/Home.vue').default);
-Vue.component('the-header', require('./components/backend/TheHeader.vue').default);
-Vue.component('the-sidebar', require('./components/backend/TheSidebar.vue').default);
+Vue.component('b-login', require('./components/backend/Login.vue').default);
+Vue.component('b-home', require('./components/backend/Home.vue').default);
+Vue.component('b-header', require('./components/backend/TheHeader.vue').default);
+Vue.component('b-sidebar', require('./components/backend/TheSidebar.vue').default);
+Vue.component('b-index', require('./components/backend/AdminIndex.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,4 +27,5 @@ Vue.component('the-sidebar', require('./components/backend/TheSidebar.vue').defa
 
 const app = new Vue({
     el: '#app',
+    router
 });

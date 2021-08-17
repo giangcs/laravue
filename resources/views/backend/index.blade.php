@@ -2,6 +2,8 @@
 @section('title','Trang quản trị')
 
 @section('content')
-		{{-- <v-home :dataa={{ $a }}></v-home> --}}
-		<v-home	></v-home>
+		{{-- <b-home :dataa={{ $a }}></b-home> --}}
+		<b-index></b-index>
+		
+    
 @endsection

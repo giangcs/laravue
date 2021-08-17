@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div id="app">
-		<v-login>{{ csrf_field() }}</v-login>
+		<b-login>{{ csrf_field() }}</b-login>
 	</div>
 	<script src="{{ asset('js/app.js') }}" defer></script>
 </body>

@@ -22,4 +22,9 @@ Route::get('/login', 'Backend\Auth\LoginController@login')->name('login');
 Route::post('/login', 'Backend\Auth\LoginController@postLogin');
 Route::group(['prefix' => 'admin', 'namespace' => 'Backend'], function () {
         Route::get('/', 'AdminController@index')->name('admin.index');
+            // Category
+        Route::group(['prefix' => 'category', 'namespace' => 'Category'], function () {
+            Route::get('/', 'CategoryController@listCategory')->name('category.index');
+            
+        });
     });
