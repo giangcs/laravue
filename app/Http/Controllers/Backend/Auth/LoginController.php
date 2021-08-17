@@ -16,7 +16,7 @@ class LoginController extends Controller
     public function postLogin(Request $request){
         // return redirect()->route('admin.index');
         $data['a']= '123323';
-        return view('backend.index' ,$data);
+        return redirect()->route('admin.index');
         
     }
 }
