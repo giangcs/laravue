@@ -4,21 +4,17 @@
  */
 require('./bootstrap');
 window.Vue = require('vue');
-import router from './router'
 
 /**
- * Vue components.
+ * Vue components. auto register
+ * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+const files = require.context('./', true, /\.vue$/i)
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('b-login', require('./components/backend/Login.vue').default);
-Vue.component('b-home', require('./components/backend/Home.vue').default);
-Vue.component('b-header', require('./components/backend/TheHeader.vue').default);
-Vue.component('b-sidebar', require('./components/backend/TheSidebar.vue').default);
-Vue.component('b-index', require('./components/backend/AdminIndex.vue').default);
-
+Vue.component('b-login', require('./components/backend/sucker/Login.vue').default);
+Vue.component('b-home', require('./components/backend/sucker/Home.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -27,5 +23,4 @@ Vue.component('b-index', require('./components/backend/AdminIndex.vue').default)
 
 const app = new Vue({
     el: '#app',
-    router
 });
